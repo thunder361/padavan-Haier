@@ -18,7 +18,6 @@ index 62cf1e6..c71d0f1 100644
   
 
 diff --git a/trunk/configs/boards/LuBan/SingleSKU_mt7615e-sku-bf.dat b/trunk/configs/boards/LuBan/SingleSKU_mt7615e-sku-bf.dat
-new file mode 100644
 index 0000000..f77a2b7
 --- /dev/null
 +++ b/trunk/configs/boards/LuBan/SingleSKU_mt7615e-sku-bf.dat
@@ -95,7 +94,6 @@ index 0000000..f77a2b7
 +                                                   
 +                                                   
 diff --git a/trunk/configs/boards/LuBan/SingleSKU_mt7615e-sku.dat b/trunk/configs/boards/LuBan/SingleSKU_mt7615e-sku.dat
-new file mode 100644
 index 0000000..d97c772
 --- /dev/null
 +++ b/trunk/configs/boards/LuBan/SingleSKU_mt7615e-sku.dat
@@ -191,8 +189,6 @@ index 0000000..fd2d8fe
 +#define BOARD_HAS_EPHY_L1000	1
 +#define BOARD_HAS_EPHY_W1000	1
 diff --git a/trunk/configs/boards/LuBan/board.mk b/trunk/configs/boards/LuBan/board.mk
-new file mode 100644
-index 0000000..3908ae1
 --- /dev/null
 +++ b/trunk/configs/boards/JD-LUBAN/board.mk
 @@ -0,0 +1,3 @@
@@ -201,8 +197,6 @@ index 0000000..3908ae1
 +CONFIG_BOARD_RAM_SIZE=512
 
 diff --git a/trunk/configs/boards/LuBan/l1profile.dat b/trunk/configs/boards/LuBan/l1profile.dat
-new file mode 100644
-index 0000000..05c6fad
 --- /dev/null
 +++ b/trunk/configs/boards/JD-LUBAN/l1profile.dat
 @@ -0,0 +1,14 @@
@@ -222,8 +216,6 @@ index 0000000..05c6fad
 +INDEX0_bf_sku_path=/etc_ro/Wireless/SingleSKU_mt7615e-sku-bf.dat
 
 diff --git a/trunk/linux-4.4.x/arch/mips/boot/dts/ralink/luban.dts b/trunk/linux-4.4.x/arch/mips/boot/dts/ralink/luban.dts
-new file mode 100644
-index 0000000..d16b135
 --- /dev/null
 +++ b/trunk/linux-4.4.x/arch/mips/boot/dts/ralink/luban.dts
 @@ -0,0 +1,123 @@
@@ -353,8 +345,7 @@ index 0000000..d16b135
 
 
 diff --git a/trunk/configs/templates/LuBan.config b/trunk/configs/templates/LuBan.config
-new file mode 100644
-index 0000000..2f4639f
+
 --- /dev/null
 +++ b/trunk/configs/templates/LuBan.config
 @@ -0,0 +1,235 @@
@@ -595,8 +586,7 @@ index 0000000..2f4639f
 +CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n
 
 diff --git a/trunk/configs/boards/JD-LUBAN/kernel-4.4.x.config b/trunk/configs/boards/JD-LUBAN/kernel-4.4.x.config
-new file mode 100644
-index 0000000..9699223
+
 --- /dev/null
 +++ b/trunk/configs/boards/JD-LUBAN/kernel-4.4.x.config
 @@ -0,0 +1,2563 @@
