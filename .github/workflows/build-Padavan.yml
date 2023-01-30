@@ -13,11 +13,6 @@ on:
 #    - cron: 0 8 * * 5
   watch:
     types: [started]
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'true'
 
 jobs:
   build:
@@ -47,20 +42,14 @@ jobs:
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
-    - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
     - name: Load LuBan Patch
       run: |
         mv luban.patch /opt/rt-n56u
         cd /opt/rt-n56u
         git apply luban.patch
-        cp -rf LuBan/* /opt/rt-n56u/trunk/configs/boards/LuBan
-        cp LuBan.config /opt/rt-n56u/trunk/configs/templates
-        cp luban.dts /opt/rt-n56u/trunk/linux-4.4.x/arch/mips/boot/dts/ralink
+        mv -rf LuBan/* /opt/rt-n56u/trunk/configs/boards/LuBan
+        mv LuBan.config /opt/rt-n56u/trunk/configs/templates
+        mv luban.dts /opt/rt-n56u/trunk/linux-4.4.x/arch/mips/boot/dts/ralink
     - name: Build Firmware
       env:
         TNAME: LuBan
