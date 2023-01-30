@@ -47,7 +47,7 @@ jobs:
         mv luban.patch /opt/rt-n56u
         cd /opt/rt-n56u
         git apply luban.patch
-        mv -rf LuBan/* /opt/rt-n56u/trunk/configs/boards/LuBan
+        mv LuBan /opt/rt-n56u/trunk/configs/boards/LuBan
         mv LuBan.config /opt/rt-n56u/trunk/configs/templates
         mv luban.dts /opt/rt-n56u/trunk/linux-4.4.x/arch/mips/boot/dts/ralink
     - name: Build Firmware
