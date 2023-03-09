@@ -1,9 +1,9 @@
-#define BOARD_PID		"LuBan"
-#define BOARD_NAME		"LuBan"
-#define BOARD_DESC		"LuBan Wireless Router"
-#define BOARD_VENDOR_NAME	"JDCloud"
-#define BOARD_VENDOR_URL	"http://www.jdcloud.com/"
-#define BOARD_MODEL_URL		"http://www.jdcloud.com/"
+#define BOARD_PID		"HAR_20S2U1"
+#define BOARD_NAME		"HAR_20S2U1"
+#define BOARD_DESC		"Haier Wireless Router"
+#define BOARD_VENDOR_NAME	"Haier"
+#define BOARD_VENDOR_URL	"http://www.haier.com/"
+#define BOARD_MODEL_URL		"http://www.haier.com/"
 #define BOARD_BOOT_TIME		20
 #define BOARD_FLASH_TIME	120
 #define BOARD_HAS_5G_11AC		1
