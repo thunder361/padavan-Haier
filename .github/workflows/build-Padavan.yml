@@ -43,7 +43,6 @@ jobs:
         sh dl_toolchain.sh
         mkdir -p /opt/images/
         cd /opt/rt-n56u
-        git apply luban.patch
         mv Haier /opt/rt-n56u/trunk/configs/boards/Haier
         mv 20S2U1.config /opt/rt-n56u/trunk/configs/templates
         mv HAR_20S2U1.dts /opt/rt-n56u/trunk/linux-4.4.x/arch/mips/boot/dts/ralink
